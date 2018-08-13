@@ -1,51 +1,21 @@
-const Asset = require('parcel-bundler')
-var compiler = require('imba/lib/compiler')
+const JSAsset = require('parcel-bundler/src/assets/JSAsset');
+var compiler = require('imba/lib/compiler/compiler');
 
-class ImbaAsset extends Asset {
-	constructor(name, pkg, options) {
-		super(name, pkg, options);
-		this.type = 'js';
-	}
-	
+class ImbaAsset extends JSAsset {
+
 	async parse (code) {
-		// const imba = await this.requireDependencies();
-		console.log('inside plugin')
-		const options = ['imba']
-		this.contents = compiler.compile(this.contents, options).toString();
+		var opts = {
+			filename: this.filename,
+			sourceMap: this.sourceMap,
+			sourcePath: this.name,
+			target: 'web',
+			ENV_DEBUG: this.debug
+			//ENV_WEBPACK: true
+		};
+		this.contents = compiler.compile(this.contents, opts).toString();
 	
-		return this.contents
-	  }
-
-	/*
-	  async requireDependencies() {
-		return await localRequire("imba", this.options.rootDir);
-	}	  
-
-	/*
-	async parse(code) {
-		const config = await this.getConfig(['.svelterc', 'svelte.config.js', 'package.json']);
-		this.contents = compiler.compile(this.contents, config).toString();
 		return await super.parse(this.contents);
 	}
-	*/
-
-	/*
-	async generate () {
-		// const options = await super.getParserOptions()
-		// options.plugins = options.plugins ? options.plugins.concat('imba') : ['imba']
-		console.log('inside plugin')
-		const config = await this.getConfig(['.svelterc', 'svelte.config.js', 'package.json']);
-		let code = compiler.compile(this.contents, config).toString();
-		//let code = '';
-		return [
-			{
-				type: 'js',
-				value: code
-				// sourceMap: this.options.sourceMaps ? map : undefined
-			}
-		];
-	}
-	*/
 }
 
 module.exports = ImbaAsset;
