@@ -1,5 +1,5 @@
 const JSAsset = require('parcel-bundler/src/assets/JSAsset');
-var compiler = require('imba/lib/compiler/compiler');
+const compiler = require('imba/lib/compiler/compiler');
 
 class ImbaAsset extends JSAsset {
 

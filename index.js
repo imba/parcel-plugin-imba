@@ -1,3 +1,3 @@
 module.exports = function (bundler) {
-	bundler.addAssetType('imba', require.resolve('./imba-asset'));
+	bundler.addAssetType('imba', require.resolve('./ImbaAsset'));
 };
