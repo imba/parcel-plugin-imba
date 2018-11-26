@@ -1,7 +1,11 @@
 # parcel-plugin-imba
 
-Makes Parcel process .imba files
-This plugin assumes that you have installed parceljs as an yarn global package:
-`yarn global add parcel-bundler`.
+This plugin enables Parcel to process `.imba` files
 
-This allows to use the same Parcel installation in all your projects.
+To use this plugin, you must have installed the [parcel-bundler](https://parceljs.org/) package globally.
+
+> Install Parcel with Yarn: `yarn global add parcel-bundler`
+
+> Install Parcel with NPM: `npm install -g parcel-bundler`
+
+Now Parcel will be available in all your projects.
