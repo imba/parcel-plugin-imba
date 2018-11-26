@@ -1,6 +1,6 @@
 # parcel-plugin-imba
 
-This plugin enables Parcel to process `.imba` files
+This plugin enables [Parcel](https://parceljs.org/) to process `.imba` files
 
 To use this plugin, you must have installed the [parcel-bundler](https://parceljs.org/) package globally.
 
