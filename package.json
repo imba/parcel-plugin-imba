@@ -7,5 +7,8 @@
 		"url": "git@github.com:altteo/parcel-plugin-imba.git"
 	},
 	"author": "Fedor Leschinsky",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"imba": "^1.4.1"
+	}
 }
