@@ -2,10 +2,28 @@
 
 This plugin enables [Parcel](https://parceljs.org/) to process `.imba` files
 
-To use this plugin, you must have installed the [parcel-bundler](https://parceljs.org/) package globally.
+You can use the plugin in your project like this:
 
-> Install Parcel with Yarn: `yarn global add parcel-bundler`
+```sh
+npm i -D parcel-bundler parcel-plugin-imba
+```
 
-> Install Parcel with NPM: `npm install -g parcel-bundler`
+Now, you can import `.imba` files in your HTML or javascript.
 
-Now Parcel will be available in all your projects.
+I also like to setup a couple scripts in my `package.json`:
+
+```json
+{
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "start": "parcel src/index.html"
+  }
+}
+```
+
+and import the entrypoint in `src/index.html`:
+
+```html
+<body></body>
+<script src="./index.imba"></script>
+```
